@@ -1,0 +1,2071 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1200px !important;
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url("../fonts/Poppins-Light.ttf") format("truetype");
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    -webkit-mask-position: center;
+    background-color: #2D3A45;
+    vertical-align: middle;
+}
+
+.icon-accardionArrow {
+    mask-image: url("../img/svg/rotatee.svg");
+    -webkit-mask-image: url("../img/svg/rotatee.svg");
+    background-color: #000000;
+    width: 26px;
+    height: 26px;
+}
+
+/*Navigation start*/
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay .navigationSecondSubLink {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .navigationSecondSubLink:hover, .overlay .navigationSecondSubLink:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #818181;
+    text-decoration: none;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay .navigationSecondSubLink {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.navigationFixedSection .navigationLogoText {
+    font-weight: 800;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.navigationFixedSection nav {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    box-sizing: border-box;
+    transition: .3s;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navigationFixedSection nav.black {
+    background-color: #000000;
+    padding: 16px 0;
+}
+
+.navigationFixedSection nav .logo {
+    float: left;
+    transition: .3s;
+}
+
+.navigationFixedSection nav.black .logo {
+    color: #fff;
+}
+
+.navigationFixedSection nav .navigationFixedUl {
+    list-style: none;
+    float: right;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.navigationFixedSection nav .navigationFixedUlIcon {
+    display: none;
+}
+
+.navigationFixedSection nav
+.navigationFixedUl li:nth-child(2),
+.navigationFixedUl li:nth-child(3),
+.navigationFixedUl li:nth-child(4),
+.navigationFixedUl li:nth-child(5),
+.navigationFixedUl li:nth-child(6) {
+    padding-left: 25px;
+}
+
+.navigationFixedSection nav .navigationFixedUl li {
+    list-style: none;
+}
+
+.navigationFixedSection nav .navigationFixedUl li a {
+    font-size: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navigationFixedSection nav .navigationFixedUl li a:hover {
+    color: #77CA6D;
+}
+
+.navigationFixedSection {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/headerBackImg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.navigationFixedSection .navigationInfoBac {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .5;
+}
+
+.navigationFixedSection .navigationInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navigationFixedSection .navigationInfo .titleMain .title {
+    width: 80%;
+    font-size: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.33);
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.navigationFixedSection .navigationInfo .navigationBtnsGroup {
+    margin-top: 90px;
+}
+
+.navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne {
+    background: #3E7933;
+    border-radius: 44px;
+    padding: 16px 52px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne:focus {
+    outline: none !important;
+    background: #488737;
+}
+
+.navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne:hover {
+    background: #488737;
+}
+
+.navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnTwo {
+    margin-left: 20px;
+    background: #FFFFFF;
+    border-radius: 44px;
+    padding: 16px 52px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    border: none;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnTwo:focus {
+    outline: none !important;
+}
+
+/*Navigation end*/
+
+/*About Company start*/
+.aboutCompanySection {
+    padding-top: 100px;
+}
+
+.aboutCompanySection .aboutCompanyTitle {
+    font-size: 30px;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+    width: 66%;
+    line-height: 27px;
+    font-weight: bold;
+}
+
+.aboutCompanySection .hr {
+    background: #3E7933;
+    border-radius: 12px;
+    width: 250px;
+    height: 2px;
+}
+
+.aboutCompanySection .aboutCompanyTitle span {
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Poppins-Medium', sans-serif;
+    font-weight: normal;
+}
+
+.aboutCompanySection .aboutCompanyTitle2 {
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+    width: 56%;
+    font-family: 'Poppins-Medium', sans-serif;
+}
+
+.aboutCompanySection .aboutCompanyTitleNumber {
+    margin-top: 26px;
+    font-size: 60px;
+    letter-spacing: 0.1em;
+    color: #3E7933;
+    font-family: 'Poppins-Bold', sans-serif;
+    text-shadow: 3px -2.5px #e2e2e0;
+}
+
+.aboutCompanySection .aboutCompanyCardSection {
+    width: 60%;
+    border: none !important;
+    background: #77CA6D !important;
+    border-radius: 19px !important;
+}
+
+.aboutCompanySection .aboutCompanyCardSection .title {
+    font-family: 'Poppins-Light', sans-serif;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+}
+
+.aboutCompanySection .aboutCompanyCardSection .subTitle {
+    margin-top: 50px;
+    font-size: 15px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+    font-family: 'Poppins-Light', sans-serif;
+}
+
+.aboutCompanySection .aboutCompanyCardSection .form-control:focus {
+    box-shadow: none !important;
+}
+
+.aboutCompanySection .aboutCompanyCardSection .form-control {
+    height: calc(2em + 0.75rem + 2px);
+    font-size: 16px;
+    color: #BCABAB;
+    border: 2px solid #8F8383;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.aboutCompanySection .aboutCompanyCardSection .aboutCompanyBtn {
+    background: #000000;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    padding: 14px 20px;
+}
+
+.aboutCompanySection .aboutCompanyCardSection .aboutCompanyBtn:focus {
+    background: #000000;
+    border: 2px solid #000000;
+    outline: none !important;
+}
+
+/*About Company end*/
+
+.appMainTitle {
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Poppins-Medium', sans-serif;
+    margin-bottom: 0;
+}
+
+.appMainSubTitle {
+    margin-bottom: 0;
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.appMainHr {
+    background: #3E7933;
+    border-radius: 12px;
+    width: 250px;
+    height: 2px;
+}
+
+/*Advantages start*/
+.advantagesSection {
+    padding-top: 100px;
+}
+
+.advantagesSection .advantagesSectionRow
+.advantagesSectionRowFlex {
+    margin-left: 100px;
+}
+
+.advantagesSection .advantagesSectionRow {
+    margin-top: 60px;
+}
+
+.advantagesSection .advantagesSectionCol1 {
+    padding-top: 88px;
+}
+
+.advantagesSection .advantagesSectionCol2 {
+    padding-top: 46px;
+}
+
+.advantagesSection .advantagesTitle {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.advantagesSection .advantagesDesc {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 25px;
+    font-family: 'Poppins-Light', sans-serif;
+    color: #000000;
+    width: 90%;
+}
+
+/*Advantages end*/
+
+/*Advantages Sub Section start*/
+.advantagesSubSection {
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/advantagesSubSectionBac.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.advantagesSubSection .advantagesSubSectionInfosCard .card-body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.advantagesSubSection .advantagesSubSectionInfosCard {
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: 0px 0px 11px -7px rgba(0, 0, 0, 0.33);
+}
+
+.advantagesSubSection .advantagesSubSectionInfosCard .desc {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    margin-bottom: 0;
+}
+
+.advantagesSubSection .advantagesSubSectionIMGMain {
+    margin-top: 20px;
+}
+
+.advantagesSubSection .advantagesSubSectionIMG {
+    width: 100%;
+    height: 100%;
+    margin-top: -100px;
+}
+
+.advantagesSubSection .advantagesSubSectionBac {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.51);
+    width: 100%;
+    height: 100%;
+}
+
+.advantagesSubSection .advantagesSubSectionBtnGroups {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.advantagesSubSection .advantagesSubSectionBtn2 {
+    background: transparent;
+    padding: 8px 28px;
+    color: #000000;
+    border: 2px solid #3E7933;
+    text-align: center;
+    font-family: 'Poppins-Bold', sans-serif;
+    border-radius: 44px;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.advantagesSubSection .advantagesSubSectionBtn2:hover {
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+    padding: 8px 28px;
+}
+
+.advantagesSubSection .advantagesSubSectionBtn2:focus {
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+    padding: 8px 28px;
+    outline: none;
+}
+
+.advantagesSubSection .advantagesSubSectionBtn1 {
+    padding: 8px 28px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Poppins-Bold', sans-serif;
+    border-radius: 44px;
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+}
+
+.advantagesSubSection .advantagesSubSectionBtn1:focus {
+    border: 2px solid #3E7933;
+    outline: none;
+}
+
+/*Advantages Sub Section end*/
+
+/*Prices start*/
+.pricesSection {
+    padding-top: 100px;
+}
+
+.pricesSection .pricesDescMain {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pricesSection .pricesDescMain .pricesDesc {
+    margin-top: 50px;
+    font-size: 24px;
+    text-align: center;
+    color: #000000;
+    font-family: 'Poppins-Medium', sans-serif;
+    width: 60%;
+}
+
+.navPillsFlex {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.pricesSection .nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background: #3E7933;
+    padding: 16px 52px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: 'Poppins-Bold', sans-serif;
+    border: 2px solid #3E7933;
+}
+
+.nav-pills .nav-link {
+    background: #FFFFFF;
+    border: 2px solid #3E7933;
+    box-sizing: border-box;
+    padding: 16px 52px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.nav-pills .navLinkMainOne {
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav-pills .navLinkMainTwo {
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.pricesSection .tableBtn {
+    background: transparent;
+    padding: 8px 28px;
+    color: #3E7933;
+    border: 2px solid #3E7933;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Poppins-Bold', sans-serif;
+    border-radius: 44px;
+}
+
+.pricesSection .tableBtn:hover {
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+    padding: 8px 28px;
+}
+
+.pricesSection .tableBtn:focus {
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+    padding: 8px 28px;
+    outline: none;
+}
+
+.pricesSection .table {
+    text-align: center;
+}
+
+.pricesSection .tableTextsTd {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: #8F8383;
+    font-family: 'Poppins-SemiBold', sans-serif;
+}
+
+.pricesSection .tableTextsTh {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: transparent !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+    border-top: none !important;
+    vertical-align: bottom;
+    border-bottom: 2px solid #000000 !important;
+}
+
+.table tbody tr {
+    border-top: none !important;
+    vertical-align: bottom;
+    border-bottom: 2px solid #C4C4C4 !important;
+}
+
+.pricesSection2 .priceSubTitleFormMain {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pricesSection2 .priceSubTitleFormMain .priceSubTitleForm {
+    font-family: 'Poppins-Medium', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+    width: 60%;
+}
+
+.pricesSection2 .priceCardForm {
+    width: 50%;
+    margin: 30px auto 0 auto;
+    border: 3px solid #3E7933;
+    box-sizing: border-box;
+    border-radius: 13px;
+}
+
+.pricesSection2 .priceCardForm .card-body {
+    padding: 40px;
+}
+
+.pricesSection2 .priceCardForm .priceCardTitle {
+    font-weight: bold;
+    font-size: 22px;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.pricesSection2 .priceCardForm .form-control {
+    height: calc(2em + 0.75rem + 2px) !important;
+    border: 2px solid #8F8383;
+    box-sizing: border-box;
+    border-radius: 65px;
+    font-size: 16px;
+    color: #8F8383;
+}
+
+.pricesSection2 .priceCardForm .form-control:focus {
+    box-shadow: none !important;
+}
+
+.pricesSection2 .priceCardForm .advantagesSubSectionBtn1Main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pricesSection2 .priceCardForm .advantagesSubSectionBtn1 {
+    padding: 8px 48px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Poppins-Bold', sans-serif;
+    border-radius: 44px;
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+}
+
+.pricesSection2 .priceCardForm .advantagesSubSectionBtn1:focus {
+    border: 2px solid #3E7933;
+    outline: none;
+}
+
+/*Prices end*/
+
+/*Frequently asked Questions start*/
+.frequentlyQuestionsSection {
+    margin-top: 100px;
+}
+
+.frequentlyQuestionsSection .faqSectionTitleMain {
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-size: 34px;
+    text-align: center;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.frequentlyQuestionsSection .questionsTitle {
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 41px;
+    line-height: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #5f5f5f;
+}
+
+.frequentlyQuestionsSection .accordionCardHeader .title {
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.frequentlyQuestionsSection .accordion {
+    /*margin-top: 58px;*/
+    /*padding-left: 80px;*/
+    padding-right: 60px;
+}
+
+.frequentlyQuestionsSection .frequentlyQuestionsCol {
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+.accordionCardHeader .accicon {
+    float: right;
+    font-size: 20px;
+}
+
+.accordionCardHeader {
+    cursor: pointer;
+    border-bottom: none;
+    background: transparent;
+}
+
+.accordionCard {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;;
+}
+
+.accordionCardBody {
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px !important;
+}
+
+.accordionCardHeader {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #000000;
+    font-family: "Poppins-Bold", sans-serif;
+}
+
+.accordionCardHeader .rotate-icon {
+    transition: 0.5s;
+    margin-top: -7px;
+}
+
+.accordionCardHeader:not(.collapsed) .icon-accardionArrow {
+    transition: 0.5s;
+    transform: rotate(45deg);
+
+    background-color: #000000 !important;
+}
+
+.accordion > .card:not(:last-of-type) {
+    border-bottom: 1px solid #E5E5E5 !important;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*Frequently asked Questions end*/
+
+/*Yes Questions start*/
+.yesQuestionsSection {
+    margin-top: 104px;
+}
+
+.yesQuestionsSection .yesQuestionsTitle {
+    font-family: 'Poppins-Bold', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.yesQuestionsSection .yesQuestionsDesc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+    font-family: 'Poppins-Medium', sans-serif;
+    width: 60%;
+}
+
+.yesQuestionsSection .yesQuestionsBtn {
+    margin-top: 20px;
+    padding: 8px 26px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    border-radius: 44px;
+    border: 2px solid #3E7933;
+    color: #FFFFFF;
+    background: #3E7933;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.33);
+    transition: .3s;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.yesQuestionsSection .yesQuestionsBtn:focus {
+    border: 2px solid #3E7933;
+    outline: none;
+}
+
+.yesQuestionsSection .yesQuestionsBtn:hover {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.33);
+}
+
+.yesQuestionsSectionFlex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.yesQuestionsSectionFlexInfo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/*Yes Questions end*/
+
+/*Work results section start*/
+.workResultsSection {
+    margin-top: 100px;
+}
+
+.workResultsSection .workResultsSectionTitle {
+    font-family: "Poppins-Bold", sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    color: #000000;
+    text-align: center;
+}
+
+.workResultsSection .owl-carousel .owl-nav button.owl-prev:focus,
+.owl-nav button.owl-next:focus {
+    outline: none !important;
+}
+
+.workResultsSection .owl-carousel .owl-nav button.owl-prev {
+    z-index: 2;
+    margin-left: -35px;
+}
+
+.workResultsSection .owl-carousel .owl-nav .owl-prev,
+.owl-next {
+    position: relative;
+}
+
+.workResultsSection .owl-carousel .owl-nav .owl-prev:after {
+    content: url("../img/svg/arrowLeft.png");
+    position: absolute;
+    left: -20px;
+    top: -5px;
+    background: #ffffff;
+}
+
+.workResultsSection .owl-carousel .owl-nav button.owl-next {
+    z-index: 2;
+    margin-right: -35px;
+}
+
+.workResultsSection .owl-carousel .owl-nav .owl-next:after {
+    content: url("../img/svg/arrowRight.png");
+    position: absolute;
+    right: -20px;
+    top: -5px;
+    background: #ffffff;
+}
+
+.workResultsSection .owl-carousel .owl-stage {
+    z-index: 1;
+}
+
+.workResultsSection .owl-carousel.owl-drag .owl-item {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.workResultsSection .owl-carousel .owl-nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+}
+
+.workResultsSection .owl-carousel {
+    margin-top: 20px;
+}
+
+.workResultsSection .owl-dots .owl-dot:focus,
+.workResultsSection .owl-dots .owl-dot:active {
+    outline: none;
+}
+
+.workResultsSection .owl-dots {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.workResultsSection .owl-dots .owl-dot {
+    padding: 6px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #C4C4C4;
+    border-radius: 50%;
+}
+
+.workResultsSection .owl-dots .owl-dot.active {
+    background: #000000;
+}
+
+/*Work results section end*/
+
+/*Footer section start*/
+.footerSection .footerColFlexOne {
+    text-align: center;
+}
+
+.footerSection .footerTitle {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 22px;
+    color: #000000;
+    font-family: 'Poppins-SemiBold', sans-serif;
+}
+
+.footerSection .footerDesc {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    font-family: 'Poppins-Regular', sans-serif;
+}
+
+.footerSvgMain {
+    height: 130px;
+}
+
+.footerSection .footerTitleMain {
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 22px;
+    color: #000000;
+    font-family: 'Poppins-Bold', sans-serif;
+    text-align: center;
+    margin-bottom: 72px;
+
+}
+
+.footerSection {
+    margin-top: 85px;
+    padding-top: 65px;
+    padding-bottom: 60px;
+    background: rgba(62, 121, 51, 0.11);
+}
+
+.footerSection .footerSubTitle {
+    font-weight: 600;
+    font-size: 22px;
+    color: #000000;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    text-align: center;
+    margin-top: 62px;
+}
+
+/*Footer section end*/
+
+@media (min-width: 1500px) {
+
+}
+
+@media (max-width: 1500px) and (min-width: 1400px) {
+}
+
+@media (max-width: 1400px) and (min-width: 1300px) {
+    .navigationFixedSection .navigationLogoText {
+        font-size: 24px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl li a {
+        font-size: 18px;
+    }
+
+    .navigationFixedSection nav
+    .navigationFixedUl li:nth-child(2),
+    .navigationFixedUl li:nth-child(3),
+    .navigationFixedUl li:nth-child(4),
+    .navigationFixedUl li:nth-child(5),
+    .navigationFixedUl li:nth-child(6) {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 1200px) {
+    .navigationFixedSection .navigationLogoText {
+        font-size: 20px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl li a {
+        font-size: 16px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl {
+        margin-top: 4px;
+    }
+
+    .navigationFixedSection nav
+    .navigationFixedUl li:nth-child(2),
+    .navigationFixedUl li:nth-child(3),
+    .navigationFixedUl li:nth-child(4),
+    .navigationFixedUl li:nth-child(5),
+    .navigationFixedUl li:nth-child(6) {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    /*Navigation start*/
+    .overlay-content {
+        top: 15% !important;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 0;
+        right: 45px;
+        font-size: 40px;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        margin-top: 0px;
+    }
+
+    .overlay .navigationSecondSubLink {
+        font-size: 20px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl {
+        display: none;
+    }
+
+    .navigationFixedSection nav .navigationFixedUlIcon {
+        list-style: none;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .navigationFixedSection .navSub {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigationFixedSection .navigationInfo .titleMain .title {
+        font-size: 40px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne {
+        padding: 0px 22px;
+        font-size: 12px;
+        height: 44px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnTwo {
+        padding: 0px 22px;
+        font-size: 12px;
+        height: 44px;
+    }
+
+    .navigationFixedSection {
+        height: 80vh;
+    }
+
+    /*Navigation end*/
+    /*About Company Section start*/
+    .aboutCompanySection .aboutCompanyCardSection {
+        width: 70%;
+    }
+
+    /*About Company Section end*/
+    /*Advantages Section start*/
+    .advantagesSection .advantagesSectionRow .advantagesSectionRowFlex {
+        margin-left: 50px;
+    }
+
+    /*Advantages Section end*/
+    /*Advantages Sub Section Section start*/
+    .advantagesSubSection .advantagesSubSectionInfosCard .desc {
+        font-size: 22px;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMG {
+        margin-top: -40px;
+    }
+
+    .advantagesSubSection {
+        margin-top: 80px;
+        height: 90vh;
+    }
+
+    /*Advantages Sub Section Section end*/
+
+}
+
+@media (max-width: 992px) and (min-width: 765px) {
+    /*Navigation start*/
+    .overlay-content {
+        top: 15% !important;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 0;
+        right: 45px;
+        font-size: 40px;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        margin-top: 0px;
+    }
+
+    .overlay .navigationSecondSubLink {
+        font-size: 20px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl {
+        display: none;
+    }
+
+    .navigationFixedSection nav .navigationFixedUlIcon {
+        list-style: none;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .navigationFixedSection .navSub {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigationFixedSection .navigationInfo .titleMain .title {
+        font-size: 40px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne {
+        padding: 0px 22px;
+        font-size: 12px;
+        height: 44px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnTwo {
+        padding: 0px 22px;
+        font-size: 12px;
+        height: 44px;
+    }
+
+    .navigationFixedSection {
+        height: 70vh;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup {
+        margin-top: 20px;
+    }
+
+    /*About Company Section start*/
+    .aboutCompanySection .aboutCompanyCardSection {
+        width: 100%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitle {
+        width: 90%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitle2 {
+        width: 90%;
+    }
+
+    /*About Company Section end*/
+    /*Advantages Section start*/
+    .advantagesSection .advantagesSectionRow .advantagesSectionRowFlex {
+        margin-left: 0px;
+    }
+
+    /*Advantages Section end*/
+    /*Advantages Sub Section Section start*/
+    .advantagesSubSection .advantagesSubSectionInfosCard .desc {
+        font-size: 22px;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMG {
+        margin-top: 0;
+        width: 60%;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMGMain {
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .advantagesSubSection {
+        margin-top: 80px;
+        height: auto;
+        background-size: auto;
+        background-image: none;
+    }
+
+    .advantagesSubSectionInfosCol1 {
+        order: 2;
+    }
+
+    .advantagesSubSectionInfosCol2 {
+        order: 1;
+    }
+
+    /*Advantages Sub Section Section end*/
+    /*Prices Section start*/
+    .pricesSection .pricesDescMain .pricesDesc {
+        width: 100%;
+    }
+
+    .pricesSection .tableTextsTh {
+        font-size: 15px;
+    }
+
+    .pricesSection .tableTextsTd {
+        font-size: 18px;
+    }
+
+    .pricesSection .tableBtn {
+        padding: 5px 22px;
+    }
+
+    .pricesSection .tableBtn:hover {
+        padding: 5px 22px;
+    }
+
+    .pricesSection .tableBtn:focus {
+        padding: 5px 22px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain {
+        margin-top: 30px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain .priceSubTitleForm {
+        width: 100%;
+    }
+
+    .pricesSection2 .priceCardForm {
+        width: 70%;
+    }
+
+    .frequentlyQuestionsSection {
+        margin-top: 50px;
+    }
+
+    .frequentlyQuestionsSection .faqSectionTitleMain {
+        margin-bottom: 20px;
+    }
+
+    .frequentlyQuestionsSection .accordion {
+        padding-right: 0;
+    }
+
+    .frequentlyQuestionsSection .frequentlyQuestionsCol {
+        padding-right: 120px;
+        padding-left: 120px;
+    }
+
+    /*Prices Section end*/
+    /*Work results section start*/
+    .workResultsSection .owl-carousel .owl-nav {
+        display: none;
+    }
+
+    .workResultsSection .workResultsSectionRow {
+        margin-left: 0;
+    }
+
+    .workResultsSection .owl-carousel.owl-drag .owl-item {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .workResultsSection .owl-carousel {
+        margin-top: 30px;
+    }
+
+    /*Work results section end*/
+    /*Footer section start*/
+    .footerSvgMain {
+        height: 110px;
+    }
+
+    .footerSvgMain2 {
+        height: 90px;
+    }
+
+    .footerSvgMain3 {
+        height: 80px;
+    }
+
+    /*Footer section end*/
+
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+    /*Navigation start*/
+    .overlay-content {
+        top: 15% !important;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 0;
+        right: 45px;
+        font-size: 40px;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        margin-top: 0px;
+    }
+
+    .overlay .navigationSecondSubLink {
+        font-size: 20px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl {
+        display: none;
+    }
+
+    .navigationFixedSection nav .navigationFixedUlIcon {
+        list-style: none;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .navigationFixedSection .navSub {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigationFixedSection .navigationInfo .titleMain .title {
+        font-size: 30px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne {
+        padding: 0px 22px;
+        font-size: 12px;
+        height: 44px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnTwo {
+        padding: 0px 22px;
+        font-size: 12px;
+        height: 44px;
+    }
+
+    .navigationFixedSection {
+        height: 60vh;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup {
+        margin-top: 40px;
+    }
+
+    /*About Company Section start*/
+    .aboutCompanySection .aboutCompanyCardSection {
+        width: 100%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitle {
+        width: 90%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitle2 {
+        width: 90%;
+    }
+
+    /*About Company Section end*/
+    /*Advantages Section start*/
+    .advantagesSection .advantagesSectionRow .advantagesSectionRowFlex {
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .advantagesSection .advantagesSectionCol1 {
+        padding-top: 0px;
+    }
+
+    .advantagesSection .advantagesSectionCol2 {
+        padding-top: 30px;
+    }
+
+    .advantagesSection .advantagesSectionCol3 {
+        padding-top: 30px;
+    }
+
+    .advantagesSection .advantagesDesc {
+        width: 100%;
+    }
+
+    /*Advantages Section end*/
+    /*Advantages Sub Section Section start*/
+    .advantagesSubSection .advantagesSubSectionInfosCard .desc {
+        font-size: 18px;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMG {
+        margin-top: 0;
+        width: 60%;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMGMain {
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .advantagesSubSection {
+        margin-top: 80px;
+        height: auto;
+        background-size: auto;
+        background-image: none;
+    }
+
+    .advantagesSubSectionInfosCol1 {
+        order: 2;
+    }
+
+    .advantagesSubSectionInfosCol2 {
+        order: 1;
+    }
+
+    /*Advantages Sub Section Section end*/
+    /*Prices Section start*/
+    .pricesSection {
+        padding-top: 80px;
+    }
+
+    .pricesSection .pricesDescMain .pricesDesc {
+        width: 100%;
+    }
+
+    .pricesSection .tableTextsTh {
+        font-size: 15px;
+    }
+
+    .pricesSection .tableTextsTd {
+        font-size: 14px;
+    }
+
+    .pricesSection .tableBtn {
+        padding: 5px 15px;
+        font-size: 10px;
+    }
+
+    .pricesSection .tableBtn:hover {
+        padding: 5px 15px;
+        font-size: 10px;
+    }
+
+    .pricesSection .tableBtn:focus {
+        padding: 5px 15px;
+        font-size: 10px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain {
+        margin-top: 30px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain .priceSubTitleForm {
+        width: 100%;
+    }
+
+    .pricesSection2 .priceCardForm {
+        width: 100%;
+    }
+
+    .frequentlyQuestionsSection {
+        margin-top: 50px;
+    }
+
+    .frequentlyQuestionsSection .faqSectionTitleMain {
+        margin-bottom: 20px;
+    }
+
+    .frequentlyQuestionsSection .accordion {
+        padding-right: 0;
+    }
+
+    .frequentlyQuestionsSection .frequentlyQuestionsCol {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pricesSection .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .nav-pills .nav-link {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .navPillsFlex {
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain .priceSubTitleForm {
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .pricesSection .pricesDescMain .pricesDesc {
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .yesQuestionsSection {
+        margin-top: 40px;
+    }
+
+    .yesQuestionsSectionFlexInfo {
+        text-align: center;
+    }
+
+    .yesQuestionsSectionFlexInfoColl {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .yesQuestionsSection .yesQuestionsDesc {
+        width: 100%;
+    }
+
+    /*Prices Section end*/
+    /*Work results section start*/
+    .workResultsSection .owl-carousel .owl-nav {
+        display: none;
+    }
+
+    .workResultsSection .workResultsSectionRow {
+        margin-left: 0;
+    }
+
+    .workResultsSection .owl-carousel.owl-drag .owl-item {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .workResultsSection .title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .workResultsSection .owl-carousel {
+        margin-top: 30px;
+    }
+
+    /*Work results section end*/
+    /*Footer section start*/
+    .footerSvgMain {
+        height: 110px;
+    }
+
+    .footerSvgMain2 {
+        height: 90px;
+    }
+
+    .footerSvgMain3 {
+        height: 80px;
+    }
+
+    /*Footer section end*/
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+    /*Navigation start*/
+    .overlay-content {
+        top: 15% !important;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 0;
+        right: 45px;
+        font-size: 40px;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        margin-top: 0px;
+    }
+
+    .overlay .navigationSecondSubLink {
+        font-size: 20px;
+    }
+
+    .navigationFixedSection nav .navigationFixedUl {
+        display: none;
+    }
+
+    .navigationFixedSection nav .navigationFixedUlIcon {
+        list-style: none;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .navigationFixedSection .navSub {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigationFixedSection .navigationLogoText {
+        font-size: 20px;
+    }
+
+    .navigationFixedSection nav {
+        padding: 10px 0;
+    }
+
+    .navigationFixedSection .navigationInfo .titleMain .title {
+        font-size: 19px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnOne {
+        padding: 0px 5px;
+        font-size: 12px;
+        height: 44px;
+        width: 100%;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup .navigationBtnTwo {
+        padding: 0px 5px;
+        font-size: 12px;
+        height: 44px;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .navigationFixedSection {
+        height: 60vh;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup {
+        flex-direction: column;
+        /*width: 70%!important;*/
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .navigationFixedSection .navigationInfo .navigationBtnsGroup {
+        margin-top: 20px;
+    }
+
+    /*About Company Section start*/
+    .aboutCompanySection {
+        padding-top: 80px;
+    }
+
+    .aboutCompanySection .aboutCompanyCardSection {
+        width: 100%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitle {
+        width: 90%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitle2 {
+        width: 90%;
+    }
+
+    .aboutCompanySection .aboutCompanyTitleNumber {
+        margin-top: 16px;
+        font-size: 50px;
+    }
+
+    .aboutCompanySection .aboutCompanyCardSection .subTitle {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    /*About Company Section end*/
+    .appMainTitle {
+        font-size: 20px;
+        color: #000000;
+        font-family: 'Poppins-Medium', sans-serif;
+        margin-bottom: 0;
+    }
+
+    /*Advantages Section start*/
+    .advantagesSection {
+        padding-top: 80px;
+    }
+
+    .advantagesSection .advantagesSectionRow .advantagesSectionRowFlex {
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .advantagesSection .advantagesSectionCol1 {
+        padding-top: 0px;
+    }
+
+    .advantagesSection .advantagesSectionCol2 {
+        padding-top: 30px;
+    }
+
+    .advantagesSection .advantagesSectionCol3 {
+        padding-top: 30px;
+    }
+
+    .advantagesSection .advantagesDesc {
+        width: 100%;
+    }
+
+    /*Advantages Section end*/
+    /*Advantages Sub Section Section start*/
+    .advantagesSubSection .advantagesSubSectionInfosCard .desc {
+        font-size: 16px;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMG {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .advantagesSubSection .advantagesSubSectionIMGMain {
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .advantagesSubSection {
+        margin-top: 80px;
+        height: auto;
+        background-size: auto;
+        background-image: none;
+    }
+
+    .advantagesSubSectionInfosCol1 {
+        order: 2;
+    }
+
+    .advantagesSubSectionInfosCol2 {
+        order: 1;
+    }
+
+    .advantagesSubSection .advantagesSubSectionBtnGroups {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .advantagesSubSection .advantagesSubSectionBtn1 {
+        display: block;
+        width: 100%;
+    }
+
+    .advantagesSubSection .advantagesSubSectionBtn2 {
+        display: block;
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /*Advantages Sub Section Section end*/
+    /*Prices Section start*/
+    .pricesSection {
+        padding-top: 80px;
+    }
+
+    .pricesSection .pricesDescMain .pricesDesc {
+        width: 100%;
+    }
+
+    .pricesSection .tableTextsTh {
+        font-size: 15px;
+    }
+
+    .pricesSection .tableTextsTd {
+        font-size: 14px;
+    }
+
+    .pricesSection .tableBtn {
+        padding: 5px 15px;
+        font-size: 10px;
+        width: 130px;
+    }
+
+    .pricesSection .tableBtn:hover {
+        padding: 5px 15px;
+        font-size: 10px;
+        width: 130px;
+    }
+
+    .pricesSection .tableBtn:focus {
+        padding: 5px 15px;
+        font-size: 10px;
+        width: 130px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain {
+        margin-top: 30px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain .priceSubTitleForm {
+        width: 100%;
+    }
+
+    .pricesSection2 .priceCardForm {
+        width: 100%;
+    }
+
+    .pricesSection2 .priceCardForm .card-body {
+        padding: 30px 20px;
+    }
+
+    .pricesSection2 .priceCardForm .priceCardTitle {
+        font-size: 16px;
+    }
+
+    .pricesSection2 .priceCardForm .advantagesSubSectionBtn1 {
+        padding: 8px 28px;
+    }
+
+    .frequentlyQuestionsSection {
+        margin-top: 50px;
+    }
+
+    .frequentlyQuestionsSection .faqSectionTitleMain {
+        margin-bottom: 20px;
+    }
+
+    .frequentlyQuestionsSection .accordion {
+        padding-right: 0;
+    }
+
+    .frequentlyQuestionsSection .frequentlyQuestionsCol {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pricesSection .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        padding: 10px 10px;
+        font-size: 9px;
+    }
+
+    .nav-pills .nav-link {
+        padding: 10px 10px;
+        font-size: 9px;
+    }
+
+    .navPillsFlex {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .pricesSection2 .priceSubTitleFormMain .priceSubTitleForm {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .pricesSection .pricesDescMain .pricesDesc {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .yesQuestionsSection {
+        margin-top: 40px;
+    }
+
+    .yesQuestionsSectionFlexInfo {
+        text-align: center;
+    }
+
+    .yesQuestionsSectionFlexInfoColl {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .yesQuestionsSection .yesQuestionsDesc {
+        width: 100%;
+    }
+
+    .frequentlyQuestionsSection .faqSectionTitleMain {
+        font-size: 24px;
+    }
+
+    .frequentlyQuestionsSection .accordionCardHeader .title {
+        font-size: 17px;
+    }
+
+    .yesQuestionsSection .yesQuestionsTitle {
+        font-family: 'Poppins-Bold', sans-serif;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: normal;
+        color: #000000;
+    }
+
+    /*Prices Section end*/
+    /*Work results section start*/
+    .workResultsSection .owl-carousel .owl-nav {
+        display: none;
+    }
+
+    .workResultsSection .workResultsSectionRow {
+        margin-left: 0;
+    }
+
+    .workResultsSection .owl-carousel.owl-drag .owl-item {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .workResultsSection .title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .workResultsSection .owl-carousel {
+        margin-top: 30px;
+    }
+
+    .workResultsSection .owl-dots .owl-dot {
+        padding: 4px !important;
+        margin-left: 5px;
+        margin-right: 5px;
+        background: #C4C4C4;
+        border-radius: 50%;
+    }
+
+    .workResultsSection .workResultsSectionTitle {
+        font-size: 24px;
+    }
+
+    /*Work results section end*/
+    /*Footer section start*/
+
+
+    .footerSvgMain {
+        height: 110px;
+    }
+
+    .footerSvgMain2 {
+        height: 90px;
+    }
+
+    .footerSvgMain3 {
+        height: 80px;
+    }
+    .footerSection .footerTitleMain {
+        font-size: 24px;
+        margin-bottom: 34px;
+    }
+    .footerSection .footerSubTitle {
+        margin-top: 32px;
+    }
+    .footerSection .footerDesc {
+        font-size: 14px;
+    }
+    .footerSection .footerTitle {
+        font-size: 20px;
+    }
+    .footerSection {
+        margin-top: 85px;
+        padding-top: 35px;
+        padding-bottom: 30px;
+    }
+    /*Footer section end*/
+}
